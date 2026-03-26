@@ -1,1 +1,1 @@
-Site currently available at: https://github.com/shevlin-owen/test_website_1.git
+Site currently available at: [https://shevlin-owen.github.io/test_website_1/](https://shevlin-owen.github.io/test_website_1/)
