@@ -1,4 +1,4 @@
-const COMPANY_NAME = "Glór na Gaoithe Media BUM";
+const COMPANY_NAME = "Glór na Gaoithe Media";
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".company-name").forEach(el => {
