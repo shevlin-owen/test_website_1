@@ -1,4 +1,5 @@
-:root {
+:root 
+{
   --bg: #0d0d0d;
   --primary: #1db954;
   --text: #f5f5f5;
@@ -6,103 +7,146 @@
   --accent: #2a2a2a;
 }
 
-* {
+* 
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Arial', sans-serif;
 }
 
-body {
+html 
+{
+  scroll-behavior: smooth;
+}
+
+body 
+{
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  font-size: 16px;
+  overflow-x: hidden;
 }
 
 /* NAVBAR */
-nav {
+nav 
+{
   display: flex;
   justify-content: space-between;
   padding: 20px;
   background: var(--secondary);
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 
-nav h1 {
+nav h1 
+{
   color: var(--primary);
 }
 
-nav ul {
+nav ul 
+{
   display: flex;
   list-style: none;
   gap: 20px;
 }
 
-nav a {
+nav a 
+{
   color: var(--text);
   text-decoration: none;
   transition: 0.3s;
+  padding: 8px 0;
+  display: inline-block;
 }
 
-nav a:hover {
+nav a:hover 
+{
   color: var(--primary);
 }
 
+.company-name 
+{
+  max-width: 80%;
+  white-space: nowrap;
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+
 /* HERO */
-.hero {
-  height: 90vh;
+.hero 
+{
+  min-height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 40px 20px;
   background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
               url('images/mount-errigal.jpg') center/cover no-repeat;
 }
 
-.hero h2 {
+.hero h2 
+{
   font-size: 3rem;
 }
 
-.btn {
+/* BUTTON */
+.btn 
+{
   display: inline-block;
   text-decoration: none;
   text-align: center;
   margin-top: 20px;
-  padding: 12px 25px;
+  padding: 14px 28px;
   background: var(--primary);
   border: none;
   color: white;
   cursor: pointer;
   transition: 0.3s;
+  font-size: 1rem;
 }
 
-.btn:hover {
+.btn:hover 
+{
   background: #17a74a;
 }
 
 /* SECTIONS */
-section {
+section 
+{
   padding: 60px 20px;
   max-width: 1100px;
   margin: auto;
+  text-align: center; /* centers h2, p, buttons by default */
 }
 
-a.card {
+a.card 
+{
   text-decoration: none;
   color: inherit;
   display: block;
 }
 
-.card {
+.card 
+{
   background: var(--accent);
   padding: 20px;
   margin-top: 20px;
   border-radius: 8px;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.card img {
+.card:active 
+{
+  transform: scale(0.98);
+}
+
+.card img 
+{
   width: 100%;
   height: 180px;
   object-fit: cover;
@@ -112,16 +156,126 @@ a.card {
 }
 
 /* GRID */
-.grid {
+.grid 
+{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
 /* FOOTER */
-footer {
+footer 
+{
   text-align: center;
   padding: 20px;
   background: var(--secondary);
   margin-top: 40px;
+}
+
+/* ========================= */
+/* 📱 MOBILE STYLES */
+/* ========================= */
+
+@media (max-width: 768px) 
+{
+
+  body 
+  {
+    font-size: 15px;
+  }
+
+  /* NAVBAR */
+  nav 
+  {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav ul 
+  {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .company-name 
+  {
+    font-size: 1.4rem; /* smaller on tablets and phones */
+  }
+  .responsive-img 
+  {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    display: block;
+    margin: 20px auto;
+  }
+
+  /* HERO */
+  .hero h2 
+  {
+    font-size: 2rem;
+  }
+
+  /* CARDS */
+  .card 
+  {
+    padding: 15px;
+  }
+
+  .card img 
+  {
+    height: 160px;
+  }
+
+  /* PERFORMANCE: smaller image */
+  .hero 
+  {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('images/mount-errigal-small.jpg') center/cover no-repeat;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) 
+{
+  .grid 
+  {
+    gap: 15px;
+  }
+}
+
+/* HAMBURGER BUTTON */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* MOBILE NAV BEHAVIOUR */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  nav ul {
+    display: none;
+    width: 100%;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
 }
