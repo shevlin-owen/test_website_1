@@ -25,14 +25,19 @@
     </ul>
   </nav>
 
+  <header class="hero hero--contact">
+    <div>
+      <h2>Contact Us</h2>
+      <p>Get in touch to discuss your project, bookings, or rates.</p>
+    </div>
+  </header>
+
   <!-- MAIN CONTENT -->
   <section>
-    <h2>Contact Us</h2>
-    <p>Get in touch to discuss your project, bookings, or rates.</p>
 
-    <div class="grid">
+    <!-- <div class="grid">
       <div class="card">
-        <p><strong>Email:</strong> cathal@glornagaoithemedia.com</p>
+        <p><strong>Email:</strong> name@email.com</p>
         <p><strong>Phone:</strong> +353 87 1234567</p>
         <p><strong>Location:</strong> Donegal, Ireland</p>
       </div>
@@ -43,8 +48,91 @@
         <p>Sat: By appointment</p>
         <p>Sun: Closed</p>
       </div>
+    </div> -->
+<!-- ========================= -->
+<!-- CONTACT SECTION -->
+<!-- ========================= -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>If you’d like to book a session or have any questions, reach out below.</p>
+
+    <!-- Email -->
+    <p>Email: <span id="email-placeholder"></span></p>
+    <button class="btn" id="email-btn">Send Email</button>
+
+    <!-- Phone -->
+    <p>Phone: <span id="phone-placeholder"></span></p>
+    <button class="btn" id="call-btn">Call Us</button>
+
+    <!-- Address -->
+    <p>Address:</p>
+    <p id="address-text"></p>
+
+    <!-- Map -->
+    <div id="map-container" style="width:100%;max-width:600px;margin:20px auto;border-radius:8px;overflow:hidden;">
+      <iframe 
+        id="map-frame"
+        src=""
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
   </section>
+
+  <script>
+    // --------------------------
+    // Email
+    // --------------------------
+    const user = "cathal";      
+    const domain = "glornagaoithemedia.com";   
+    const email = user + "@" + domain;
+
+    document.getElementById("email-placeholder").innerHTML =
+      `<a href="mailto:${email}">${user}[at]${domain}</a>`;
+
+    document.getElementById("email-btn").addEventListener("click", () => {
+      window.location.href = `mailto:${email}?subject=Studio Inquiry`;
+    });
+
+    // --------------------------
+    // Phone
+    // --------------------------
+    const countryCode = "+353";      
+    const areaCode = "87";
+    const number = "1234567";
+    const phone = `${countryCode}${areaCode}${number}`;
+
+    document.getElementById("phone-placeholder").innerHTML =
+      `<a href="tel:${phone}">${countryCode} ${areaCode} ${number}</a>`;
+
+    document.getElementById("call-btn").addEventListener("click", () => {
+      window.location.href = `tel:${phone}`;
+    });
+
+    // --------------------------
+    // Address + Map
+    // --------------------------
+    const street = "Upper Dore";
+    const city = "Bunbeg Po";
+    const state = "Donegal";
+    const zip = "F92 K7P8";
+    const fullAddress = `${street}, ${city}, ${state} ${zip}`;
+
+    document.getElementById("address-text").textContent = fullAddress;
+
+    // OpenStreetMap iframe
+    // You can adjust the latitude and longitude to your exact location
+    const latitude = 55.052114;   // example: Los Angeles coordinates
+    const longitude = -8.226576;
+    const zoom = 15;
+
+    const mapUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${longitude-0.01}%2C${latitude-0.01}%2C${longitude+0.01}%2C${latitude+0.01}&layer=mapnik&marker=${latitude}%2C${longitude}`;
+
+    document.getElementById("map-frame").src = mapUrl;
+  </script>
 
   <!-- FOOTER -->
   <footer>

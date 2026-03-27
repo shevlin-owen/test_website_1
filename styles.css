@@ -84,8 +84,63 @@ nav a:hover
   align-items: center;
   text-align: center;
   padding: 40px 20px;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-              url('images/mount-errigal.jpg') center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Variations */
+.hero--home 
+{
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                    url('images/home/mount_errigal_2.jpg');
+}
+
+.hero--about 
+{
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                    url('images/about/focusrite_1.jpg');
+}
+
+.hero--equipment 
+{
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                    url('images/logic_1.jpg');
+}
+
+.hero--space 
+{
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                    url('images/space/mount_errigal_1.jpg');
+}
+.hero--testimonials 
+{
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                    url('images/testimonials/booth_1.jpg');
+}
+.hero--equipment_protools 
+{
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                    url('images/equipment/avid_pro_tools_system.jpg');
+}
+.hero--equipment_mic
+{
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                    url('images/equipment/neumann_u87_microphone.jpg');
+}
+.hero--equipment_monitors
+{
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                    url('images/equipment/genelec_monitors.jpg');
+}
+.hero--equipment_booth
+{
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                    url('images/equipment/recording_booth.jpg');
+}
+.hero--contact
+{
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                    url('images/contact/mic_1.jpg');
 }
 
 .hero h2 
@@ -230,11 +285,11 @@ footer
   }
 
   /* PERFORMANCE: smaller image */
-  .hero 
+  /* .hero 
   {
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
                 url('images/mount-errigal-small.jpg') center/cover no-repeat;
-  }
+  } */
 }
 
 /* Extra small devices */
