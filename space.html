@@ -1,39 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Equipment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="config.js"></script>
+  <script src="config.js" defer></script>
 </head>
+
 <body>
 
-<nav>
-  <h1 class="company-name"></h1>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="equipment.html">Equipment</a></li>
-    <li><a href="space.html">Space</a></li>
-    <li><a href="testimonials.html">Testimonials</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <!-- NAVBAR -->
+  <nav>
+    <h1 class="company-name"></h1>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="equipment.html">Equipment</a></li>
+      <li><a href="space.html">Space</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<section>
-  <h2>Space</h2>
-  <div class="grid">
-    <div class="card">Pictures of Main Room</div>
-    <div class="card">Pictures of Booth</div>
-    <div class="card">Pictures of Facilities - Kitchen, Toilet Seating Area</div>
-    <div class="card">Pictures of Building and Surrounding Area</div>
+  <!-- MAIN CONTENT -->
+  <section>
+    <h2>Space</h2>
+    <div class="grid">
 
-  </div>
-</section>
+      <div class="card">
+        <h3>Main Room</h3>
+        <p>Pictures and layout of the main recording/mixing room.</p>
+      </div>
 
-<footer>
-  <p class="copyright"></p>
-</footer>
+      <div class="card">
+        <h3>Booth</h3>
+        <p>Photos and details of the recording booth.</p>
+      </div>
+
+      <div class="card">
+        <h3>Facilities</h3>
+        <p>Kitchen, toilet, seating area and other amenities.</p>
+      </div>
+
+      <div class="card">
+        <h3>Building & Surroundings</h3>
+        <p>Images of the building exterior and surrounding area.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="copyright"></p>
+  </footer>
+
+  <!-- HAMBURGER SCRIPT -->
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("nav-menu");
+
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
 
 </body>
 </html>

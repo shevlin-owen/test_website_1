@@ -1,35 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
+
+  <!-- Mobile responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>About</title>
+
   <link rel="stylesheet" href="styles.css">
-  <script src="config.js"></script>
+  <script src="config.js" defer></script>
 </head>
+
 <body>
 
-<nav>
-  <h1 class="company-name"></h1>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="equipment.html">Equipment</a></li>
-    <li><a href="space.html">Space</a></li>
-    <li><a href="testimonials.html">Testimonials</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <nav>
+    <h1 class="company-name"></h1>
 
-<section>
-  <h2>About</h2>
-  <p>Don't like onions. Johnny Cash is pretty solid. I don't own a guitar strap.</p>
+    <!-- Hamburger menu -->
+    <button class="menu-toggle" id="menu-toggle">
+      ☰
+    </button>
 
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="equipment.html">Equipment</a></li>
+      <li><a href="space.html">Space</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-</section>
+  <section>
+    <h2>About</h2>
+    <p>Don't like onions. Johnny Cash is pretty solid. I don't own a guitar strap.</p>
+  </section>
 
-<footer>
-  <p class="copyright"></p>
-</footer>
+  <footer>
+    <p class="copyright"></p>
+  </footer>
+
+  <!-- Hamburger toggle script -->
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("nav-menu");
+
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
 
 </body>
 </html>

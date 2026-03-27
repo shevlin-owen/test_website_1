@@ -1,44 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Testimonials</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="config.js"></script>
+  <script src="config.js" defer></script>
 </head>
+
 <body>
 
-<nav>
-  <h1 class="company-name"></h1>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="equipment.html">Equipment</a></li>
-    <li><a href="space.html">Space</a></li>
-    <li><a href="testimonials.html">Testimonials</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <!-- NAVBAR -->
+  <nav>
+    <h1 class="company-name"></h1>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="equipment.html">Equipment</a></li>
+      <li><a href="space.html">Space</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<section>
-  <h2>What Clients Say</h2>
+  <!-- MAIN CONTENT -->
+  <section>
+    <h2>What Clients Say</h2>
 
-  <div class="card">
-    <p>"Exceptional quality and attention to detail."</p>
-    <strong>- Guy</strong>
-  </div>
+    <div class="grid">
+      <div class="card">
+        <p>"Exceptional quality and attention to detail."</p>
+        <strong>- Guy</strong>
+      </div>
 
+      <div class="card">
+        <p>"Top quality."</p>
+        <strong>- Some Other Guy</strong>
+      </div>
+    </div>
+  </section>
 
-  <div class="card">
-    <p>"Top quailty."</p>
-    <strong>- Some Other Guy</strong>
-  </div>
+  <!-- FOOTER -->
+  <footer>
+    <p class="copyright"></p>
+  </footer>
 
-</section>
+  <!-- HAMBURGER SCRIPT -->
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("nav-menu");
 
-<footer>
-  <p class="copyright"></p>
-</footer>
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
 
 </body>
 </html>
